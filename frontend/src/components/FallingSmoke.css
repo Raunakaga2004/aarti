@@ -1,0 +1,34 @@
+.falling-smoke-container {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 9999;
+}
+
+.smoke {
+  position: absolute;
+  bottom: -6em;
+  width: 6em;
+  height: 6em;
+  background: radial-gradient(circle, rgba(238, 238, 238, 0.801) 0%, rgba(200,200,200,0) 70%);
+  border-radius: 50%;
+  filter: blur(8px);
+  animation-name: rise;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
+}
