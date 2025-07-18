@@ -14,7 +14,7 @@ import couple4 from './assets/2.png'
 import couple5 from './assets/couple6.jpg'
 import couple6 from './assets/couple9.jpg'
 
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import {Typewriter} from "react-simple-typewriter"
 
 import {useNavigate} from "react-router-dom"
@@ -428,7 +428,19 @@ function App() {
             
 
             {showCouple && showLoading && (
-              <div>Wait Our Memories are loading...</div>
+              
+              <AnimatePresence>
+                <motion.div
+                  key={'first'}
+                  initial={{opacity : 0}}
+                  animate={{opacity : 1}}
+                  exit={{opacity : 0}}
+                  transition={{duration: 0.6}}
+                  >
+                    <div>Wait Our Memories are loading...</div>
+                  </motion.div>
+              </AnimatePresence>
+              
             )}
 
             {showCouple && !showLoading && (
