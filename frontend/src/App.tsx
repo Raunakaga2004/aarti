@@ -303,9 +303,9 @@ function App() {
         couple6Ref.current?.scrollIntoView({ behavior: "smooth" });
       }, 24000); // Scroll after 14s (9s after motion appears)
 
-      // const screenFade = setTimeout(()=>{
-      //   setBlackScreen(true);
-      // }, 28000)
+      const screenFade = setTimeout(()=>{
+        setBlackScreen(true);
+      }, 28000)
 
       const lastTimerSongFade = setTimeout(() => {
         fadeAudio(ennuitAudioRef.current, true);
@@ -351,13 +351,13 @@ function App() {
             <div
               className={`absolute top-0 left-0 w-full h-1/2 flex justify-center items-center pointer-events-none ${
                 highlighted === 'aarti'
-                  ? 'text-[#b65ee1] text-[50vh] font-bold '
+                  ? 'text-[#b65ee1] md:text-[50vh] text-[20vh] font-bold '
                   : highlighted === 'raunak'
-                  ? 'text-[#2e72bf] text-[50vh] font-bold '
+                  ? 'text-[#2e72bf] md:text-[50vh] text-[15vh] font-bold '
                   : 'text-[#2b2b2b]'
               }`}
             >
-              <span className="select-none">
+              <span className="select-none text-center">
                 {highlighted ||
                   'Hover to the bottom right for Raunak side and Hover to the bottom left for Aarti Side'}
               </span>
@@ -379,7 +379,7 @@ function App() {
                 src={frontRaunak}
                 width={400}
                 height={800}
-                className="translate-x-[150px]"
+                className="md:translate-x-[150px] translate-x-[180px]"
                 alt="frontRaunak"
                 style={{ filter: 'drop-shadow(5px -2px 2px rgba(0, 0, 0, 0.8))' }}
                 highlight={highlighted === 'raunak'}
@@ -388,7 +388,7 @@ function App() {
                 src={frontAarti}
                 width={400}
                 height={650}
-                className="-translate-x-[400px] translate-y-[105px]"
+                className="md:-translate-x-[400px] translate-y-[105px] -translate-x-[300px]"
                 alt="frontAarti"
                 style={{ filter: 'drop-shadow(-5px -2px 2px rgb(0, 0, 0, 0.8))' }}
                 highlight={highlighted === 'aarti'}
@@ -409,7 +409,7 @@ function App() {
           <div className="h-screen w-screen flex justify-center items-center">
 
             {index != -1 && <div
-              className={`fixed text-5xl font-semibold px-4 py-2 break-words w-1/4 ${
+              className={`fixed md:text-5xl text-3xl font-semibold px-4 py-2 md:break-words md:w-1/4 ${
                 currentLine.gender === "male"
                   ? "text-[#2e72bf] left-[2vw]"
                   : "text-[#b65ee1] italic right-[2vw]"
@@ -466,7 +466,7 @@ function App() {
           </div>
 
           <div ref={couple4Ref} className='h-screen flex justify-center items-center'>
-            <img src={couple4} className="h-[100vh]" />
+            <img src={couple4} className="md:h-[100vh]" />
           </div>
 
           <div ref={couple5Ref} className='h-screen flex justify-center items-center'>
