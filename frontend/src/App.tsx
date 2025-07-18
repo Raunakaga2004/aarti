@@ -24,7 +24,7 @@ function App() {
   // const [showBlank, setShowBlank] = useState(false);
   const [animateDown, setAnimateDown] = useState(false);
   const [showCouple, setShowCouple] = useState(false);
-  const [slideIn, setSlideIn] = useState(false);
+  // const [slideIn, setSlideIn] = useState(false);
   const [showLoading, setShowLoading] = useState(true);
   const [showBlackScreen, setBlackScreen] = useState(true);
 
@@ -203,7 +203,7 @@ function App() {
     ennuitAudioRef.current.play();
     setTimeout(() => {
       setShowCouple(true);
-      setSlideIn(true);
+      // setSlideIn(true);
     }, 1000); // match animation duration
   };
 
@@ -303,9 +303,9 @@ function App() {
         couple6Ref.current?.scrollIntoView({ behavior: "smooth" });
       }, 24000); // Scroll after 14s (9s after motion appears)
 
-      const screenFade = setTimeout(()=>{
-        setBlackScreen(true);
-      }, 28000)
+      // const screenFade = setTimeout(()=>{
+      //   setBlackScreen(true);
+      // }, 28000)
 
       const lastTimerSongFade = setTimeout(() => {
         fadeAudio(ennuitAudioRef.current, true);
