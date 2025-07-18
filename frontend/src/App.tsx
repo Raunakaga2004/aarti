@@ -21,7 +21,7 @@ import {useNavigate} from "react-router-dom"
 
 function App() {
   const [highlighted, setHighlighted] = useState<'aarti' | 'raunak' | null>(null);
-  const [showBlank, setShowBlank] = useState(false);
+  // const [showBlank, setShowBlank] = useState(false);
   const [animateDown, setAnimateDown] = useState(false);
   const [showCouple, setShowCouple] = useState(false);
   const [slideIn, setSlideIn] = useState(false);
@@ -184,7 +184,11 @@ function App() {
     },
   ]
 
-  const [currentLine, setCurrentLine] = useState({});
+  interface cur{
+    text : String,
+    gender : String
+  }
+  const [currentLine, setCurrentLine] = useState<cur>({text : "", gender : ""}); //useRef<HTMLDivElement | null>(null)
 
   useEffect(()=>{
     if(index != -1){
@@ -213,11 +217,11 @@ function App() {
     }
   },[showCouple])
 
-  const couple2Ref = useRef(null);
-  const couple3Ref = useRef(null);
-  const couple4Ref = useRef(null);
-  const couple5Ref = useRef(null);
-  const couple6Ref = useRef(null);
+  const couple2Ref = useRef<HTMLDivElement | null>(null);
+  const couple3Ref = useRef<HTMLDivElement | null>(null);
+  const couple4Ref = useRef<HTMLDivElement | null>(null);
+  const couple5Ref = useRef<HTMLDivElement | null>(null);
+  const couple6Ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!showLoading && showCouple) {
@@ -299,9 +303,9 @@ function App() {
         couple6Ref.current?.scrollIntoView({ behavior: "smooth" });
       }, 24000); // Scroll after 14s (9s after motion appears)
 
-      const screenFade = setTimeout(()=>{
-        setBlackScreen(true);
-      }, 28000)
+      // const screenFade = setTimeout(()=>{
+      //   setBlackScreen(true);
+      // }, 28000)
 
       const lastTimerSongFade = setTimeout(() => {
         fadeAudio(ennuitAudioRef.current, true);
@@ -322,7 +326,7 @@ function App() {
 
   return (
     <>
-      {!showBlank && !showCouple ? (
+      {!showCouple ? (
         <>
           {showBlackScreen && <motion.div
             className="fixed top-0 left-0 h-full w-full bg-black z-50"
@@ -413,7 +417,7 @@ function App() {
             >
               <Typewriter
                 key={index}
-                words={[currentLine.text]}
+                words={[currentLine.text.toString()]}
                 cursor
                 typeSpeed={50}
                 deleteSpeed={0}
