@@ -303,13 +303,13 @@ function App() {
         couple6Ref.current?.scrollIntoView({ behavior: "smooth" });
       }, 24000); // Scroll after 14s (9s after motion appears)
 
-      // const screenFade = setTimeout(()=>{
-      //   setBlackScreen(true);
-      // }, 28000)
+      const screenFade = setTimeout(()=>{
+        setBlackScreen(true);
+      }, 28000)
 
       const lastTimerSongFade = setTimeout(() => {
         fadeAudio(ennuitAudioRef.current, true);
-      }, 29600);
+      }, 29700);
       const lastTimer = setTimeout(() => {
         navigate(0);
       }, 30000);
