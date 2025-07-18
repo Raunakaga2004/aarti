@@ -303,9 +303,9 @@ function App() {
         couple6Ref.current?.scrollIntoView({ behavior: "smooth" });
       }, 24000); // Scroll after 14s (9s after motion appears)
 
-      const screenFade = setTimeout(()=>{
-        setBlackScreen(true);
-      }, 28000)
+      // const screenFade = setTimeout(()=>{
+      //   setBlackScreen(true);
+      // }, 28000)
 
       const lastTimerSongFade = setTimeout(() => {
         fadeAudio(ennuitAudioRef.current, true);
@@ -409,7 +409,7 @@ function App() {
           <div className="h-screen w-screen flex justify-center items-center">
 
             {index != -1 && <div
-              className={`fixed md:text-5xl text-3xl font-semibold px-4 py-2 md:break-words md:w-1/4 ${
+              className={`fixed md:text-5xl text-3xl font-semibold px-4 py-2 break-words md:w-1/4 w-1/2 ${
                 currentLine.gender === "male"
                   ? "text-[#2e72bf] left-[2vw]"
                   : "text-[#b65ee1] italic right-[2vw]"
