@@ -437,7 +437,7 @@ function App() {
                   exit={{opacity : 0}}
                   transition={{duration: 0.6}}
                   >
-                    <div>Wait Our Memories are loading...</div>
+                    <div>Wait Our Memories are loading...<br/>{"(Don't touch or move the cursor)"}</div>
                   </motion.div>
               </AnimatePresence>
               
